@@ -1,0 +1,112 @@
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.calculator-wrap {
+  max-width: 420px;
+  margin: 20px auto;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0px 3px 40px #0003;
+  background: var(--bg);
+}
+.top-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.main-input {
+  width: 100%;
+  font-size: 1.15rem;
+  padding: 12px 10px;
+  border-radius: 6px;
+  border: 1px solid #999;
+  color: var(--fg);
+  background: var(--field-bg);
+}
+.dark-switch {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  background: var(--btn-bg);
+  color: var(--fg);
+  cursor: pointer;
+}
+.result-box {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-height: 30px;
+}
+.result, .solutions pre {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--green);
+}
+.solutions pre {
+  color: var(--blue);
+}
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+  margin: 0 0 14px 0;
+}
+.btn {
+  font-size: 1.11rem;
+  padding: 14px 0;
+  background: var(--btn-bg);
+  border: none;
+  border-radius: 7px;
+  color: var(--fg);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn.green {
+  background: #44bd32;
+  color: #fff;
+}
+.btn.red {
+  background: #e74c3c;
+  color: #fff;
+}
+.btn:active {
+  filter: brightness(0.89);
+}
+.solve-x-btn {
+  margin-top: 7px;
+  width: 100%;
+  padding: 14px 0;
+  background: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.09rem;
+  cursor: pointer;
+}
+:root, .light {
+  --bg: #fff;
+  --fg: #202428;
+  --field-bg: #f3f3f3;
+  --btn-bg: #ececec;
+  --green: #218c48;
+  --blue: #174897;
+}
+.dark, body.dark {
+  --bg: #212327;
+  --fg: #eef1f4;
+  --field-bg: #25272a;
+  --btn-bg: #2f3136;
+  --green: #38e07a;
+  --blue: #63aaf8;
+}
+::-webkit-input-placeholder { color: #aaa }
+::-moz-placeholder { color: #aaa }
+:-ms-input-placeholder { color: #aaa }
+::placeholder { color: #aaa }
+@media (max-width: 600px) {
+  .calculator-wrap { max-width: 99vw; padding: 5vw }
+  .main-input { font-size: 1.05rem; }
+  .btn, .solve-x-btn { font-size: 0.96rem; }
+}
