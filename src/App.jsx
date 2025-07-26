@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
@@ -39,9 +38,10 @@ function App() {
       setInput((prev) => prev + val);
     }
   }
+
   function sendToBackend(text) {
     axios
-      .post("/calculate", { expression: preprocess(text) })
+      .post("https://web-calculator-backend.onrender.com/calculate", { expression: preprocess(text) })
       .then((res) => {
         setResult(res.data.result || "");
         setSolutions(res.data.solutions || []);
@@ -57,6 +57,7 @@ function App() {
   function handleDarkMode() {
     setDark((d) => !d);
   }
+
   React.useEffect(() => {
     document.body.className = dark ? "dark" : "light";
   }, [dark]);
